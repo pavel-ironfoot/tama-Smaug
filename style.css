@@ -97,7 +97,7 @@
     }
     100%{
         left: 75px;
-        rotate: -25deg;
+        transform:  rotate(-25deg);
     }
 }
 @keyframes hatmove {
@@ -107,31 +107,31 @@
     100%{
         top: -4px;
         left: 28px;
-        rotate: 20deg;
+        transform:  rotate(20deg);
     }
 }
 @keyframes flymove1 {
     0%{
         left: 48px;
         top: 67px;      
-        rotate: 10deg;
+        transform:  rotate(10deg);
     }
     100%{
         top: 87px;
         left: 45px;
-        rotate: -20deg;
+        transform:  rotate(-20deg);
     }
 }
 @keyframes flymove2 {
     0%{
         left: 109px;
         top: 67px;      
-        rotate: -20deg;
+        transform:  rotate(-20deg);
     }
     100%{
         top: 87px;
         left: 109px;
-        rotate: 20deg;
+        transform:  rotate(20deg);
     }
 }
 .dragonsleep{
@@ -196,7 +196,7 @@
     display: none;
     top: 60px;
     left: -20px;
-    rotate:10deg;
+    transform:  rotate(10deg);
     animation-name: fireEat;
     animation-duration: 2s;
 
