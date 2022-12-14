@@ -1,0 +1,230 @@
+.container{
+    margin: 10px;
+    padding: 10px;
+    background-image: linear-gradient(to right,rgb(201, 200, 137),rgb(255, 187, 0));
+}
+.container--main{  
+    display: flex;
+    min-width: 400px;
+}
+.container--aside{
+    width: 200px;
+    border: 1px solid black;
+}
+.main{
+    border: 1px solid black;
+    margin-left: 5px;
+    min-height: 75vh;
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dragon{
+    position: relative;
+}
+.funnydragon{
+    display: block;
+    width: 150px;
+    height: 158px;
+}
+.dragoneays{
+    width: 35px;
+    position: absolute;
+    display: block;
+    top: 32px;
+    left: 63px;
+    animation-name: eaysmove;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.dragontong{
+    display: block;
+    position: absolute;
+    width: 60px;
+    top: 132px;
+    left: 70px;
+    animation-name: tongmove;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.dragonhat{
+    display: block;
+    position: absolute;
+    width: 57px;
+    top: 3px;
+    left: 28px;
+    animation-name: hatmove;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.dragonfly1{
+    display: none;
+    position: absolute;
+    width:40px;
+    top: 70px;
+    left:48px;
+    animation-name: flymove1;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.dragonfly2{
+    display: none;
+    position: absolute;
+    width:40px;
+    top: 70px;
+    left:109px;
+    animation-name: flymove2;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes eaysmove {
+    0%{
+        left: 63px;
+    }
+    100%{
+        left: 70px;
+    }
+}
+@keyframes tongmove {
+    0%{
+        left: 70px;
+    }
+    100%{
+        left: 75px;
+        rotate: -25deg;
+    }
+}
+@keyframes hatmove {
+    0%{
+        left: 28px;
+    }
+    100%{
+        top: -4px;
+        left: 28px;
+        rotate: 20deg;
+    }
+}
+@keyframes flymove1 {
+    0%{
+        left: 48px;
+        top: 67px;      
+        rotate: 10deg;
+    }
+    100%{
+        top: 87px;
+        left: 45px;
+        rotate: -20deg;
+    }
+}
+@keyframes flymove2 {
+    0%{
+        left: 109px;
+        top: 67px;      
+        rotate: -20deg;
+    }
+    100%{
+        top: 87px;
+        left: 109px;
+        rotate: 20deg;
+    }
+}
+.dragonsleep{
+    display: none;
+    position: absolute;
+    width: 44px;
+    top: 26px;
+    left: 62px;
+}
+.sleepText{
+    display: none;
+    position: absolute;
+    top: 3px;
+    left: 100px;
+    width: 20px;
+    animation-name: sleepT;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes sleepT {
+    0%{
+        width: 20px;
+    }
+    100%{
+        top: -20px;
+        width: 40px;
+    }
+}
+.fly-annimation{
+    animation-name: dragon-play-fly;
+    animation-duration: 10s;
+}
+@keyframes dragon-play-fly {
+    0%{
+        top: 0px;
+        left: 0px;
+    }
+    20%{
+        top: 20px;
+        left: 100px;
+    }
+    40%{
+        top: 80px;
+        left: -100px;
+    }
+    60%{
+        top: -80px;
+        left: 100px;
+    }
+    80%{
+        top: -120px;
+        left: -200px;
+    }
+    100%{
+        top: 0px;
+        left: 0px;
+    }
+}
+.fire{
+    position: absolute;
+    display: none;
+    top: 60px;
+    left: -20px;
+    rotate:10deg;
+    animation-name: fireEat;
+    animation-duration: 2s;
+
+}
+@keyframes fireEat {
+    0%{
+        width: 20px;
+        top:60px;
+        left: 70px;
+    }
+    100%{
+        width: 100px;
+    }
+}
+.death{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    display: none;
+    width: 200px;
+    animation-name: death;
+    animation-duration: 3s;
+}
+@keyframes death {
+    0%{
+        width: 20px;
+    }
+    100%{
+        width: 400px;
+    }
+}
