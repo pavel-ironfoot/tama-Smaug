@@ -79,7 +79,7 @@ class Dragon extends Tamagochi {
                 this.hungry=10;
                 death.style.display = 'block';
             elem.style.display = 'none';
-            elem.innerHTML = 'dragon fell asleep forever...';
+            sleepText.innerHTML = 'dragon fell asleep forever...';
             dragonText.innerHTML = 'you are a murderer, you killed the dragon!';
             this.death = true;
             delete Smaug.wantSleep;
