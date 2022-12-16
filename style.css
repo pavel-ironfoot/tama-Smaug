@@ -1,18 +1,27 @@
+body{
+    background-color: rgb(77, 74, 74);
+}
 .container{
     margin: 10px;
     padding: 10px;
-    background-image: linear-gradient(to right,rgb(201, 200, 137),rgb(255, 187, 0));
+    background-image: url(./images/map.jpg);
 }
-.container--main{  
+.container-main{  
     display: flex;
     min-width: 400px;
 }
-.container--aside{
+.container-aside{
     width: 200px;
-    border: 1px solid black;
+    padding: 5px;
+    background-color: rgba(238, 238, 144, 0.582);
+}
+header{
+    background-color: rgba(127, 170, 211, 0.432);
+    padding: 10px;
+    margin-bottom: 10px;
 }
 .main{
-    border: 1px solid black;
+    background-color: rgba(179, 175, 164, 0.432);
     margin-left: 5px;
     min-height: 75vh;
     flex-grow: 2;
@@ -23,12 +32,16 @@
 .dragon{
     position: relative;
 }
-.funnydragon{
+.funny-dragon{
     display: block;
     width: 150px;
     height: 158px;
 }
-.dragoneays{
+.activity{
+    border-bottom: 2px solid gray;
+    padding: 10px 0;
+}
+.dragon-eays{
     width: 35px;
     position: absolute;
     display: block;
@@ -39,7 +52,7 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-.dragontong{
+.dragon-tong{
     display: block;
     position: absolute;
     width: 60px;
@@ -50,7 +63,7 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-.dragonhat{
+.dragon-hat{
     display: block;
     position: absolute;
     width: 57px;
@@ -61,7 +74,7 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-.dragonfly1{
+.dragon-fly-1{
     display: none;
     position: absolute;
     width:40px;
@@ -72,7 +85,7 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-.dragonfly2{
+.dragon-fly-2{
     display: none;
     position: absolute;
     width:40px;
@@ -134,14 +147,14 @@
         transform:  rotate(20deg);
     }
 }
-.dragonsleep{
+.dragon-sleep{
     display: none;
     position: absolute;
     width: 44px;
     top: 26px;
     left: 62px;
 }
-.sleepText{
+.sleep-text{
     display: none;
     position: absolute;
     top: 3px;
@@ -227,4 +240,16 @@
     100%{
         width: 400px;
     }
+}
+button{
+    padding: 5px;
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 18px;
+    border-radius: 4px;
+    border: none;
+    background-color: rgba(231, 129, 34, 0.849);
+}
+button:hover{
+    background-color: rgba(165, 42, 42, 0.274);
 }

@@ -9,11 +9,11 @@ const dragonText = document.querySelector('.main-dragon');
 const buttonPlay = document.querySelector('.bt-play');
 const buttonSleep = document.querySelector('.bt-sleep');
 const buttonEat = document.querySelector('.bt-eat');
-const sleepOn = document.querySelector('.dragonsleep');
-const sleepText = document.querySelector('.sleepText');
+const sleepOn = document.querySelector('.dragon-sleep');
+const sleepText = document.querySelector('.sleep-text');
 const dragon = document.querySelector('.dragon');
-const dragonfly1 = document.querySelector('.dragonfly1');
-const dragonfly2 = document.querySelector('.dragonfly2');
+const dragonfly1 = document.querySelector('.dragon-fly-1');
+const dragonfly2 = document.querySelector('.dragon-fly-2');
 
 class Tamagochi {
     constructor(name){
@@ -21,7 +21,6 @@ class Tamagochi {
     }
     sayHello(e) {
         e.innerHTML = `Hello, my name is ${this.name}!`;
-        console.log('Hello, ' + this.name);
     }
 }
 
@@ -43,7 +42,6 @@ class Dragon extends Tamagochi {
             elem.innerHTML = this.sleep;
             if(this.sleep<9){
                 clearInterval(dragonSleep);
-                console.log('dragon need a sleep!');
                 elem.innerHTML = 'dragon need a sleep!';
             }
         },1000)
@@ -58,40 +56,39 @@ class Dragon extends Tamagochi {
             
             if(this.play<200){
                 clearInterval(dragonPlay);
-                // elem.innerHTML = 'dragon need to Fly!';
             }
         },1000)
     }
     needToEat(elem,meat=0){
-        // if(this.disturbed==true) return;
         this.hungry= this.hungry + meat;
         elem.innerHTML = this.hungry;
-        console.log(this.hungry)
         let dragonHungry = setInterval(()=>{
             this.hungry = this.hungry-10;
             elem.innerHTML = this.hungry;
             if(this.hungry<200){
                 clearInterval(dragonHungry);
-                // elem.innerHTML = 'dragon need a meat!';
             }
         },1000)
     };
-    dragonIsDeath(elem,death){
+    dragonIsDeath(elem,death,sleepText){
         let dragonCaput =setInterval(()=>{
             
             if((this.sleep<9 && this.hungry<200 && this.play<200) || this.hungry<=200 || this.play<=200){
+                this.health=0;
+                this.play=10;
+                this.hungry=10;
                 death.style.display = 'block';
             elem.style.display = 'none';
+            elem.innerHTML = 'dragon fell asleep forever...';
             dragonText.innerHTML = 'you are a murderer, you killed the dragon!';
             this.death = true;
-            console.log('you are a murderer, you killed the dragon!');
             delete Smaug.wantSleep;
             delete Smaug.needToPlay;
             delete Smaug.needToEat;
             delete Smaug.sayHello;
             clearInterval(dragonCaput);
         }            
-        },20000)
+        },3000)
     }; 
 }
 
@@ -101,14 +98,13 @@ Smaug.sayHello(hello);
 Smaug.wantSleep(sleep);
 Smaug.needToPlay(play);
 Smaug.needToEat(eat);
-Smaug.dragonIsDeath(dragon,death);
+Smaug.dragonIsDeath(dragon,death,sleep);
 
 buttonPlay.addEventListener('click',()=>{
     if(Smaug.death==true) return;
     if(Smaug.disturbed==true) return;
     if(Smaug.play>=1000) return;
     Smaug.disturbed = true;
-    // Smaug.needToPlay(play,fly,100);
     Smaug.play = Smaug.play+200;
     Smaug.hungry = Smaug.hungry-100;
     eat.innerHTML=Smaug.hungry;
@@ -152,7 +148,6 @@ buttonEat.addEventListener('click',()=>{
     if(Smaug.hungry>=1000) return;
     if(Smaug.disturbed===true) return;
     Smaug.hungry = Smaug.hungry+110;
-    console.log(Smaug.hungry);
     fire.style.display = 'block';
     setTimeout(()=>{
         fire.style.display = 'none';
